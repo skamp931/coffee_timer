@@ -111,20 +111,19 @@ def create_46_method_timer():
     
     # コーヒー粉量から総水量を計算（15倍を基準とし、10g単位で四捨五入）
     calculated_water = round((coffee_amount * 15) / 10) * 10
-    
-    # 計算された総水量を表示（編集不可）
-    st.markdown(f"""
-        <div class="info-text">
-        推奨総水量: {calculated_water}g (お湯:粉= 15:1)<br>(合計時間: 3分30秒)
-        </div><br>
-    """, unsafe_allow_html=True)
 
-    
     # 抽出設定の計算
     first_phase = calculated_water * 0.4
     second_phase = calculated_water * 0.6
     pour_amounts = [first_phase/2, first_phase/2, second_phase/3, second_phase/3, second_phase/3]
     times = [0, 45, 90, 135, 165]
+    
+    # 計算された総水量を表示（編集不可）
+    st.markdown(f"""
+        <div class="info-text">
+        推奨総水量: {calculated_water}g (お湯:粉= 15:1)<br>(合計時間: 3分30秒)<br>1回目: {int(pour_amounts[0])}g
+        </div><br>
+    """, unsafe_allow_html=True)
     
     if st.button('タイマー開始'):
         info_area = st.empty()
