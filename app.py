@@ -48,7 +48,7 @@ def create_46_method_timer():
             color: #1f77b4;
         }
         .info-text {
-            font-size: 20px !important;
+            font-size: 14px !important;
             line-height: 1.5;
         }
         .stButton>button {
@@ -124,11 +124,11 @@ def create_46_method_timer():
         pour_indicator = st.empty()
         next_pour_warning = st.empty()
         
-        start_time = time.time() - 5
+        start_time = time.time()
         show_warning = False
         
         while True:
-            current_time = time.time() - start_time 
+            current_time = time.time() - start_time - 5
             
             if current_time > 210:
                 timer.markdown('<p class="big-timer">完了!</p>', unsafe_allow_html=True)
