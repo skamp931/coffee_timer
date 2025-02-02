@@ -117,14 +117,6 @@ def create_46_method_timer():
     second_phase = calculated_water * 0.6
     pour_amounts = [first_phase/2, first_phase/2, second_phase/3, second_phase/3, second_phase/3]
     times = [0, 45, 90, 135, 165]
-    """
-    sum_of_elements = 0
-    sum_pour_amounts = []
-    
-    for i in range(4):  # 0 から 3 までのインデックスを指定
-        sum_of_elements += pour_amounts[i]  # 各要素を合計に足していく
-        sum_pour_amounts[0] =sum_of_elements
-    """
     
     if st.button('タイマー開始'):
         info_area = st.empty()
@@ -150,11 +142,11 @@ def create_46_method_timer():
             info_area.markdown(f"""
             <div class="info-text">
             総抽出量: {calculated_water}g (合計時間: 3分30秒)<br>
-            1回目: {pour_amounts[0]:d}g - 0秒開始 {'(実行中)' if current_stage == 0 else '(完了)' if current_stage > 0 else ''}<br>
-            2回目: {pour_amounts[1]:d}g 「総量{sum(pour_amounts[:1]):d}g」 - 45秒開始 {'(実行中)' if current_stage == 1 else '(完了)' if current_stage > 1 else ''}<br>
-            3回目: {pour_amounts[2]:d}g 「総量{sum(pour_amounts[:2]):d}g」 - 1分30秒開始 {'(実行中)' if current_stage == 2 else '(完了)' if current_stage > 2 else ''}<br>
-            4回目: {pour_amounts[3]:d}g 「総量{sum(pour_amounts[:3]):d}g」 - 2分15秒開始 {'(実行中)' if current_stage == 3 else '(完了)' if current_stage > 3 else ''}<br>
-            5回目: {pour_amounts[4]:d}g 「総量{sum(pour_amounts[:4]):d}g」 - 2分45秒開始 {'(実行中)' if current_stage == 4 else '(完了)' if current_stage > 4 else ''}
+            1回目: {int(pour_amounts[0])}g - 0秒開始 {'(実行中)' if current_stage == 0 else '(完了)' if current_stage > 0 else ''}<br>
+            2回目: {int(pour_amounts[1])}g 「総量{int(sum(pour_amounts[:1]))}g」 - 45秒開始 {'(実行中)' if current_stage == 1 else '(完了)' if current_stage > 1 else ''}<br>
+            3回目: {int(pour_amounts[2])}g 「総量{int(sum(pour_amounts[:2]))}g」 - 1分30秒開始 {'(実行中)' if current_stage == 2 else '(完了)' if current_stage > 2 else ''}<br>
+            4回目: {int(pour_amounts[3])}g 「総量{int(sum(pour_amounts[:3]))}g」 - 2分15秒開始 {'(実行中)' if current_stage == 3 else '(完了)' if current_stage > 3 else ''}<br>
+            5回目: {int(pour_amounts[4])}g 「総量{int(sum(pour_amounts[:4]))}g」 - 2分45秒開始 {'(実行中)' if current_stage == 4 else '(完了)' if current_stage > 4 else ''}
             </div>
             """, unsafe_allow_html=True)
             
