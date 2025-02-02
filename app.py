@@ -78,7 +78,7 @@ def create_46_method_timer():
         .big-pour-indicator {
         font-size: 26px !important;
         padding: 20px !important;
-        line-height: 1.5 !important;
+        line-height: 1.0 !important;
         background-color: rgba(0, 0, 255, 0.3) !important;  /* 青色背景30%透過 */
         }
         .stInfo {
@@ -87,11 +87,11 @@ def create_46_method_timer():
         .big-warning {
             font-size: 28px !important;
             padding: 20px !important;
-            line-height: 1.6 !important;
+            line-height: 1.0 !important;
             background-color: rgba(255, 255, 0, 0.3) !important;  /* 黄色背景30%透過 */
         }
         .stWarning {
-            font-size: 36px !important;
+            font-size: 30px !important;
         }
         </style>
     """, unsafe_allow_html=True)
@@ -135,7 +135,7 @@ def create_46_method_timer():
         timer_message = st.empty()  # カウントダウン表示領域
     
         for i in range(count_down, 0, -1):
-            timer_message.markdown(f'<p class="countdown">抽出かいしまで{i}</p>', unsafe_allow_html=True)
+            timer_message.markdown(f'<p class="countdown">抽出開始まで{i}</p>', unsafe_allow_html=True)
             time.sleep(1)
     
         timer_message.empty()  # カウントダウン表示を消去
@@ -157,7 +157,7 @@ def create_46_method_timer():
             
             info_area.markdown(f"""
             <div class="info-text">
-            総抽出量: {calculated_water}g (合計時間: 3分30秒)<br>
+            総抽出量: {calculated_water}g (合計時間: 3分30秒)<br><br>
             1回目: {int(pour_amounts[0])}g - 0秒開始 {'(実行中)' if current_stage == 0 else '(完了)' if current_stage > 0 else ''}<br>
             2回目: {int(pour_amounts[1])}g 「総量{int(sum(pour_amounts[:2]))}g」 - 45秒開始 {'(実行中)' if current_stage == 1 else '(完了)' if current_stage > 1 else ''}<br>
             3回目: {int(pour_amounts[2])}g 「総量{int(sum(pour_amounts[:3]))}g」 - 1分30秒開始 {'(実行中)' if current_stage == 2 else '(完了)' if current_stage > 2 else ''}<br>
@@ -169,7 +169,7 @@ def create_46_method_timer():
             if current_stage < len(times):
                 pour_indicator.markdown(f"""
                     <div class="big-pour-indicator stInfo">
-                        第{current_stage + 1}回目の抽出中 ({pour_amounts[current_stage]:.1f}g)
+                        第{current_stage + 1}回目の抽出中 ({int(pour_amounts[current_stage])}g)
                     </div>
                 """, unsafe_allow_html=True)
             
@@ -181,7 +181,7 @@ def create_46_method_timer():
                         next_time_str = f"{times[current_stage + 1] // 60}分{times[current_stage + 1] % 60}秒"
                         next_pour_warning.markdown(f"""
                             <div class="big-warning stWarning" onload="playBeep()">
-                            ⚠️ あと{int(time_to_next)}秒で第{current_stage + 2}回目の抽出 ({pour_amounts[current_stage + 1]:.1f}g) - {next_time_str}開始
+                            ⚠️ あと{int(time_to_next)}秒で第{current_stage + 2}回目の抽出 ({int(pour_amounts[current_stage + 1])}g) - {next_time_str}開始
                             </div>
                             <script>playBeep();</script>
                         """, unsafe_allow_html=True)
