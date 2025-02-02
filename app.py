@@ -118,6 +118,8 @@ def create_46_method_timer():
     pour_amounts = [first_phase/2, first_phase/2, second_phase/3, second_phase/3, second_phase/3]
     times = [0, 45, 90, 135, 165]
     sum_of_elements = 0
+    sum_pour_amounts = []
+    
     for i in range(4):  # 0 から 3 までのインデックスを指定
         sum_of_elements += pour_amounts[i]  # 各要素を合計に足していく
         sum_pour_amounts[0] =sum_of_elements
