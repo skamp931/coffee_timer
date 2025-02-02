@@ -35,7 +35,7 @@ def create_46_method_timer():
     st.markdown("""
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <h1 style='text-align: center; color: #ffffff; background-color: rgba(255, 255, 255, 0.1) ; font-family: "Roboto", sans-serif; font-size: 40px; '>
-        4:6メソッド<br>コーヒータイマー
+        4:6メソッド<br>CoffeeTimer
     </h1>
 """, unsafe_allow_html=True)
     # CSS for larger display
@@ -48,7 +48,7 @@ def create_46_method_timer():
             color: #1f77b4;
         }
         .info-text {
-            font-size: 14px !important;
+            font-size: 20px !important;
             line-height: 1.5;
         }
         .stButton>button {
