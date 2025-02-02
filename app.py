@@ -48,7 +48,7 @@ def create_46_method_timer():
             color: #1f77b4;
         }
         .countdown {
-            font-size: 80px !important;
+            font-size: 40px !important;
             font-weight: bold;
             text-align: center;
             color: #1f77b4;
@@ -87,7 +87,7 @@ def create_46_method_timer():
         .big-warning {
             font-size: 28px !important;
             padding: 20px !important;
-            line-height: 1.0 !important;
+            line-height: 1.5 !important;
             background-color: rgba(255, 255, 0, 0.3) !important;  /* 黄色背景30%透過 */
         }
         .stWarning {
@@ -115,9 +115,10 @@ def create_46_method_timer():
     # 計算された総水量を表示（編集不可）
     st.markdown(f"""
         <div class="info-text">
-        推奨総水量: {calculated_water}g (お湯 : コーヒー粉= 15 : 1)
+        推奨総水量: {calculated_water}g (お湯:粉= 15:1)<br>(合計時間: 3分30秒)
         </div><br>
     """, unsafe_allow_html=True)
+
     
     # 抽出設定の計算
     first_phase = calculated_water * 0.4
@@ -157,7 +158,6 @@ def create_46_method_timer():
             
             info_area.markdown(f"""
             <div class="info-text">
-            総抽出量: {calculated_water}g (合計時間: 3分30秒)<br><br>
             1回目: {int(pour_amounts[0])}g - 0秒開始 {'(実行中)' if current_stage == 0 else '(完了)' if current_stage > 0 else ''}<br>
             2回目: {int(pour_amounts[1])}g 「総量{int(sum(pour_amounts[:2]))}g」 - 45秒開始 {'(実行中)' if current_stage == 1 else '(完了)' if current_stage > 1 else ''}<br>
             3回目: {int(pour_amounts[2])}g 「総量{int(sum(pour_amounts[:3]))}g」 - 1分30秒開始 {'(実行中)' if current_stage == 2 else '(完了)' if current_stage > 2 else ''}<br>
