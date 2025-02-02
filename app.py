@@ -42,13 +42,13 @@ def create_46_method_timer():
     st.markdown("""
         <style>
         .big-timer {
-            font-size: 180px !important;
+            font-size: 140px !important;
             font-weight: bold;
             text-align: center;
             color: #1f77b4;
         }
         .info-text {
-            font-size: 24px !important;
+            font-size: 20px !important;
             line-height: 1.5;
         }
         .stButton>button {
@@ -59,7 +59,7 @@ def create_46_method_timer():
             font-size: 24px;
         }
         .stAlert {
-            font-size: 28px;
+            font-size: 24px;
         }
         div[data-baseweb="select"] {
             font-size: 20px;
@@ -69,7 +69,7 @@ def create_46_method_timer():
         }
         /* 抽出中の表示を大きく */
         .big-pour-indicator {
-        font-size: 36px !important;
+        font-size: 32px !important;
         padding: 20px !important;
         line-height: 1.5 !important;
         background-color: rgba(0, 0, 255, 0.3) !important;  /* 青色背景30%透過 */
@@ -78,13 +78,13 @@ def create_46_method_timer():
             font-size: 36px !important;
         }
         .big-warning {
-            font-size: 42px !important;
+            font-size: 36px !important;
             padding: 25px !important;
             line-height: 1.6 !important;
             background-color: rgba(255, 255, 0, 0.3) !important;  /* 黄色背景30%透過 */
         }
         .stWarning {
-            font-size: 42px !important;
+            font-size: 36px !important;
         }
         </style>
     """, unsafe_allow_html=True)
