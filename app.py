@@ -143,10 +143,10 @@ def create_46_method_timer():
             <div class="info-text">
             総抽出量: {calculated_water}g (合計時間: 3分30秒)<br>
             1回目: {int(pour_amounts[0])}g - 0秒開始 {'(実行中)' if current_stage == 0 else '(完了)' if current_stage > 0 else ''}<br>
-            2回目: {int(pour_amounts[1])}g 「総量{int(sum(pour_amounts[:1]))}g」 - 45秒開始 {'(実行中)' if current_stage == 1 else '(完了)' if current_stage > 1 else ''}<br>
-            3回目: {int(pour_amounts[2])}g 「総量{int(sum(pour_amounts[:2]))}g」 - 1分30秒開始 {'(実行中)' if current_stage == 2 else '(完了)' if current_stage > 2 else ''}<br>
-            4回目: {int(pour_amounts[3])}g 「総量{int(sum(pour_amounts[:3]))}g」 - 2分15秒開始 {'(実行中)' if current_stage == 3 else '(完了)' if current_stage > 3 else ''}<br>
-            5回目: {int(pour_amounts[4])}g 「総量{int(sum(pour_amounts[:4]))}g」 - 2分45秒開始 {'(実行中)' if current_stage == 4 else '(完了)' if current_stage > 4 else ''}
+            2回目: {int(pour_amounts[1])}g 「総量{int(sum(pour_amounts[:2]))}g」 - 45秒開始 {'(実行中)' if current_stage == 1 else '(完了)' if current_stage > 1 else ''}<br>
+            3回目: {int(pour_amounts[2])}g 「総量{int(sum(pour_amounts[:3]))}g」 - 1分30秒開始 {'(実行中)' if current_stage == 2 else '(完了)' if current_stage > 2 else ''}<br>
+            4回目: {int(pour_amounts[3])}g 「総量{int(sum(pour_amounts[:4]))}g」 - 2分15秒開始 {'(実行中)' if current_stage == 3 else '(完了)' if current_stage > 3 else ''}<br>
+            5回目: {int(pour_amounts[4])}g 「総量{int(sum(pour_amounts[:5]))}g」 - 2分45秒開始 {'(実行中)' if current_stage == 4 else '(完了)' if current_stage > 4 else ''}
             </div>
             """, unsafe_allow_html=True)
             
