@@ -47,8 +47,15 @@ def create_46_method_timer():
             text-align: center;
             color: #1f77b4;
         }
+        .countdown {
+            font-size: 80px !important;
+            font-weight: bold;
+            text-align: center;
+            color: #1f77b4;
+        }
+
         .info-text {
-            font-size: 20px !important;
+            font-size: 18px !important;
             line-height: 1.5;
         }
         .stButton>button {
@@ -128,7 +135,7 @@ def create_46_method_timer():
         timer_message = st.empty()  # カウントダウン表示領域
     
         for i in range(count_down, 0, -1):
-            timer_message.markdown(f'<p class="big-timer">{i}</p>', unsafe_allow_html=True)
+            timer_message.markdown(f'<p class="countdown">抽出かいしまで{i}</p>', unsafe_allow_html=True)
             time.sleep(1)
     
         timer_message.empty()  # カウントダウン表示を消去
