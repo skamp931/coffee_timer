@@ -123,8 +123,17 @@ def create_46_method_timer():
         timer = st.empty()
         pour_indicator = st.empty()
         next_pour_warning = st.empty()
+
+        count_down = 5  # カウントダウン秒数
+        timer_message = st.empty()  # カウントダウン表示領域
+    
+        for i in range(count_down, 0, -1):
+            timer_message.markdown(f'<p class="big-timer">{i}</p>', unsafe_allow_html=True)
+            time.sleep(1)
+    
+        timer_message.empty()  # カウントダウン表示を消去
         
-        start_time = time.time() + 5
+        start_time = time.time()
         show_warning = False
         
         while True:
