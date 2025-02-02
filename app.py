@@ -34,7 +34,7 @@ def create_timer():
 def create_46_method_timer():
     st.markdown("""
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <h1 style='text-align: center; color: #ffffff; background-color: rgba(255, 255, 255, 0.1) ; font-family: "Roboto", sans-serif; font-size: 46px; '>
+    <h1 style='text-align: center; color: #ffffff; background-color: rgba(255, 255, 255, 0.1) ; font-family: "Roboto", sans-serif; font-size: 40px; '>
         4:6メソッド<br>コーヒータイマー
     </h1>
 """, unsafe_allow_html=True)
@@ -124,11 +124,11 @@ def create_46_method_timer():
         pour_indicator = st.empty()
         next_pour_warning = st.empty()
         
-        start_time = time.time()
+        start_time = time.time() + 5
         show_warning = False
         
         while True:
-            current_time = time.time() - start_time - 5
+            current_time = time.time() - start_time
             
             if current_time > 210:
                 timer.markdown('<p class="big-timer">完了!</p>', unsafe_allow_html=True)
