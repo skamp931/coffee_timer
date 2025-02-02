@@ -69,17 +69,17 @@ def create_46_method_timer():
         }
         /* 抽出中の表示を大きく */
         .big-pour-indicator {
-        font-size: 32px !important;
+        font-size: 26px !important;
         padding: 20px !important;
         line-height: 1.5 !important;
         background-color: rgba(0, 0, 255, 0.3) !important;  /* 青色背景30%透過 */
         }
         .stInfo {
-            font-size: 36px !important;
+            font-size: 28px !important;
         }
         .big-warning {
-            font-size: 36px !important;
-            padding: 25px !important;
+            font-size: 28px !important;
+            padding: 20px !important;
             line-height: 1.6 !important;
             background-color: rgba(255, 255, 0, 0.3) !important;  /* 黄色背景30%透過 */
         }
@@ -124,11 +124,11 @@ def create_46_method_timer():
         pour_indicator = st.empty()
         next_pour_warning = st.empty()
         
-        start_time = time.time()
+        start_time = time.time() - 5
         show_warning = False
         
         while True:
-            current_time = time.time() - start_time
+            current_time = time.time() - start_time 
             
             if current_time > 210:
                 timer.markdown('<p class="big-timer">完了!</p>', unsafe_allow_html=True)
